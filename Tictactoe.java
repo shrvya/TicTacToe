@@ -9,6 +9,7 @@ public class Tictactoe {
 	static int val=1;
 	static char player,computer;
 	static char input;
+	static int index;
 	static Scanner sc=new Scanner(System.in);
 	static Random random=new Random();
    /*
@@ -60,12 +61,32 @@ public class Tictactoe {
 		System.out.println("|    "+board[7]+"|    "+board[8]+"|    "+board[9]+"|    ");
 		
 	}
+	/*
+	 * this method will allow the player select the index where the input is 
+	 * to be displayed
+	 */
+	public static void selectIndex()
+	{
+		System.out.println("player please enter the index");
+		index=sc.nextInt();
+		if(index>0 && index<10)
+		{
+			board[index]=player;
+			val++;
+			showBoard();
+			
+		}
+		else {
+			System.out.println("invalid index");
+		}
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         System.out.println("Welcome to tic tac toe");
         initialize();
         playerInput();
         showBoard();
+        selectIndex();
 	}
 
 }
