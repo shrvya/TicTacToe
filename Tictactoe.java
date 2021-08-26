@@ -69,7 +69,7 @@ public class Tictactoe {
 	{
 		System.out.println("player please enter the index");
 		index=sc.nextInt();
-		if(index>0 && index<10)
+		if(isEmpty(index) && index>0 && index<10)
 		{
 			board[index]=player;
 			val++;
@@ -78,6 +78,20 @@ public class Tictactoe {
 		}
 		else {
 			System.out.println("invalid index");
+		}
+	}
+	/*
+	 * this method will check if desired index if free
+	 * if it is occupied the another index value has to be given
+	 */
+	public static boolean isEmpty(int index)
+	{
+		if(board[index]==' ')
+		{
+			return true;
+		}
+		else {
+			return false;
 		}
 	}
 	public static void main(String[] args) {
