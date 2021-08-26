@@ -10,6 +10,7 @@ public class Tictactoe {
 	static char player,computer;
 	static char input;
 	static int index;
+	static int toss,tosschoice;
 	static Scanner sc=new Scanner(System.in);
 	static Random random=new Random();
    /*
@@ -94,6 +95,27 @@ public class Tictactoe {
 			return false;
 		}
 	}
+	/*
+	 * this method will toss
+	 * if player wins toss then player will play first
+	 * otherwise computer plays first
+	 */
+	public static void tossing()
+	{
+		System.out.println("Head(1) or Tails(0)");
+		tosschoice=sc.nextInt();
+		toss=random.nextInt(2);
+		if(tosschoice==toss)
+		{
+			System.out.println("Player won the toss.player plays first");
+			
+		}
+		else {
+			System.out.println("computer won the toss,computer plays first");
+			
+		}
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         System.out.println("Welcome to tic tac toe");
@@ -101,6 +123,7 @@ public class Tictactoe {
         playerInput();
         showBoard();
         selectIndex();
+        tossing();
 	}
 
 }
