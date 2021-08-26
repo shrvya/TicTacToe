@@ -241,7 +241,7 @@ public class Tictactoe {
 		index=random.nextInt(10);
 		if(isEmpty(index)==true)
 		{
-			if(computerCanwin() )
+			if(computerCanwin() || ifPlayerCanwin() )
 			{
 				if(isEmpty(index))
 				{
@@ -322,6 +322,69 @@ public class Tictactoe {
 			}
 			else 
 				return false;
+	}
+	/*
+	 * computer uses this method to see possibilities of player winning
+	 * and blocks the chances of player winning
+	 */
+	public static boolean ifPlayerCanwin()
+	{
+			if((board[1]==player && board[2]==player && board[3]==' ') ||(board[7]==player && board[5]==player && board[3]==' ')
+					||(board[9]==player && board[6]==player && board[3]==' '))
+			{
+				index=3;
+				return true;
+				
+			}
+			else if((board[2]==player && board[3]==player && board[1]==' ') ||(board[7]==player && board[4]==player && board[1]==' ')
+					||(board[9]==player && board[5]==player && board[1]==' '))
+			{
+				index=1;
+				return true;
+				
+			}
+			else if((board[1]==player && board[3]==player && board[2]==' ') ||(board[8]==player && board[5]==player && board[2]==' '))
+			{
+				index=2;
+				return true;
+			}
+			else if((board[1]==player && board[7]==player && board[4]==' ') ||(board[6]==player && board[5]==player && board[4]==' '))
+			{
+				index=4;
+				return true;
+			}
+			else if((board[4]==player && board[6]==player && board[5]==' ') ||(board[2]==player && board[8]==player && board[5]==' '))
+			{
+				index=5;
+				return true;
+			}
+			else if((board[9]==player && board[3]==player && board[6]==' ') ||(board[4]==player && board[5]==player && board[6]==' ')
+					)
+			{
+				index=6;
+				return true;
+			}
+			else if((board[1]==player && board[4]==player && board[7]==' ') ||(board[8]==player && board[9]==player && board[7]==' ')
+					||(board[5]==player && board[3]==player && board[7]==' '))
+			{
+				index=7;
+				return true;
+			}
+			else if((board[7]==player && board[9]==player && board[8]==' ') ||(board[2]==player && board[5]==player && board[8]==' ')
+					)
+			{
+				index=8;
+				return true;
+			}
+			else if((board[1]==player && board[5]==player && board[9]==' ') ||(board[8]==player && board[7]==player && board[9]==' ')
+					||(board[5]==player && board[1]==player && board[9]==' '))
+			{
+				index=9;
+				return true;
+			}
+			else 
+				return false;	
+		
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
