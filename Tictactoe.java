@@ -27,7 +27,9 @@ public class Tictactoe {
 			
 		}
 	  }
-	
+	/*
+	 * this method will allow player to choose input X or O
+	 */
 	public static void playerInput()
 	{
 		System.out.println("Please enter input X or O");
@@ -43,11 +45,27 @@ public class Tictactoe {
 		}
 		
 	}
+	/*
+	 * this method will display the tictactoe board
+	 */
+	public static void showBoard()
+	{
+		System.out.println("|     |     |     |");
+		System.out.println("|    "+board[1]+"|    "+board[2]+"|    "+board[3]+"|    ");
+		System.out.println("---------------------");
+		System.out.println("|     |     |     |");
+		System.out.println("|    "+board[4]+"|    "+board[5]+"|    "+board[6]+"|    ");
+		System.out.println("---------------------");
+		System.out.println("|     |     |     |");
+		System.out.println("|    "+board[7]+"|    "+board[8]+"|    "+board[9]+"|    ");
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         System.out.println("Welcome to tic tac toe");
         initialize();
         playerInput();
+        showBoard();
 	}
 
 }
