@@ -76,6 +76,8 @@ public class Tictactoe {
 			board[index]=player;
 			val++;
 			showBoard();
+			System.out.println("     ");
+			System.out.println("      ");
 			
 		}
 		else {
@@ -241,7 +243,7 @@ public class Tictactoe {
 		index=random.nextInt(10);
 		if(isEmpty(index)==true)
 		{
-			if(computerCanwin() || ifPlayerCanwin() )
+			if(computerCanwin() || ifPlayerCanwin() || checkCorner() )
 			{
 				if(isEmpty(index))
 				{
@@ -384,6 +386,38 @@ public class Tictactoe {
 			}
 			else 
 				return false;	
+		
+	}
+	/*
+	 * this method will prioritize corner indexes
+	 */
+	public static boolean checkCorner()
+	{
+		 corner=random.nextInt(4);
+		 if(corner==0)
+		 {
+			 index=1;
+			 return true;
+		 }
+		 else if(corner==1)
+		 {
+			 index=3;
+			 return true;
+		 }
+		 else if(corner==2)
+		 {
+			 index=7;
+			 return true;
+		 }
+		 else if(corner==3)
+		 {
+			 index=9;
+			 return true;
+		 }
+		 
+		 else {
+			 return false;
+		 }
 		
 	}
 	public static void main(String[] args) {
