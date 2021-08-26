@@ -236,6 +236,8 @@ public class Tictactoe {
 		checkTie();
 		}
 	
+	
+	
 	/*
 	 * this method will give the index where computer will input
 	 */
@@ -437,9 +439,13 @@ public class Tictactoe {
 		}
 		
 	}
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         System.out.println("Welcome to tic tac toe");
+        
+       
         initialize();
 		showBoard();
 		playerInput();
@@ -447,6 +453,23 @@ public class Tictactoe {
 		tossing();
 		startGame();
 		displayWinner();
+		System.out.println("do u want another game 1/0");
+		int reply;
+		reply=sc.nextInt();
+		if(reply==1)
+		{
+			 initialize();
+				showBoard();
+				playerInput();
+				
+				tossing();
+				val=0;
+				startGame();
+				displayWinner();
+		}
+		else {
+			System.out.println("game ended");
+		}
 	}
 
 }
