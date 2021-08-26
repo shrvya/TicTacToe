@@ -90,7 +90,7 @@ public class Tictactoe {
 	 */
 	public static void tossing()
 	{
-		System.out.println("Head(1) or Tails(1)");
+		System.out.println("Head(1) or Tails(0)");
 		tosschoice=sc.nextInt();
 		toss=random.nextInt(2);
 		if(tosschoice==toss)
@@ -243,7 +243,7 @@ public class Tictactoe {
 		index=random.nextInt(10);
 		if(isEmpty(index)==true)
 		{
-			if(computerCanwin() || ifPlayerCanwin() || checkCorner() )
+			if(computerCanwin() || ifPlayerCanwin() || checkCorner() ||checkCenter())
 			{
 				if(isEmpty(index))
 				{
@@ -418,6 +418,22 @@ public class Tictactoe {
 		 else {
 			 return false;
 		 }
+		
+	}
+	/*
+	 * this method checks for center index
+	 */
+	public static boolean checkCenter()
+	{
+		center=random.nextInt(10);
+		if(center==5 )
+		{
+			index=5;
+			return true;
+		}
+		else {
+			return false;
+		}
 		
 	}
 	public static void main(String[] args) {
