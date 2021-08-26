@@ -109,7 +109,8 @@ public class Tictactoe {
 	 */
 	public static void startGame()
 	{
-		while(val<10) {
+		while(val<10) //plays till all indexes are filled
+		{
 		if(toswin)
 		{
 			selectIndex();
